@@ -1,0 +1,15 @@
+int findPeakElement(vector<int>& nums) {
+        int n=nums.size();
+        int mi=0;
+        int mele=nums[0];
+        for(int i=0;i<n;i++){
+            if(nums[i]>=mele){
+                mele=nums[i];
+                mi=i;
+            }
+        }
+        return mi;
+    }
+    
+    
+    //Question:https://leetcode.com/problems/find-peak-element/
