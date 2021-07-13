@@ -1,0 +1,29 @@
+for _ in range(int(input())):
+    a=list(map(int,input().split()))
+    z=sorted(a)
+    i1=a.index(z[3])
+    i2=a.index(z[2])
+    if i1==0:
+        if i2==1:
+            print("NO")
+        else:
+            print("YES")
+    if i1==1:
+        if i2==0:
+            print("NO")
+        else:
+            print("YES")
+    if i1==2:
+        if i2==3:
+            print("NO")
+        else:
+            print("YES")
+    if i1==3:
+        if i2==2:
+            print("NO")
+        else:
+            print("YES")
+    
+
+                
+  Question:https://codeforces.com/contest/1535/problem/A
