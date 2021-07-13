@@ -1,0 +1,60 @@
+int solve(vector<string>& ops) {
+    stack<int> s;
+    int l=ops.size();
+    for(int i=0;i<l;i++){
+        if(ops[i]=="POP"){
+            if(s.empty()!=1){
+                s.pop();
+            }
+            else{
+                return (-1);
+            }
+        }
+        else if(ops[i]=="DUP"){
+            if(s.empty()!=1){
+                s.push(s.top());
+            }
+            else{
+                return -1;
+            }
+        }
+        else if(ops[i]=="+"){
+            if(s.size()>=2){
+                int a1=s.top();
+                s.pop();
+                int a2=s.top();
+                s.pop();
+                s.push(a1+a2);
+            }
+            else{
+                return -1;
+            }
+
+        }
+        else if(ops[i]=="-"){
+            if(s.size()>=2){
+                int a1=s.top();
+                s.pop();
+                int a2=s.top();
+                s.pop();
+                s.push(a1-a2);
+            }
+            else{
+                return -1;
+            }
+
+
+        }
+        else{
+            int v=stoi(ops[i]);
+            s.push(v);
+        }
+        
+    }
+    return s.top();
+    
+
+}
+
+
+Question:https://binarysearch.com/problems/Word-Machine
